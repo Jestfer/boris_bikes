@@ -20,7 +20,9 @@ describe DockingStation do
   it { is_expected.to respond_to(:bike_available) }
 
   it 'returns available bike' do
-
+    bike = Bike.new
+    subject.return_bike(bike)
+    expect(subject.bike_available).to eq bike
   end
 
 end
